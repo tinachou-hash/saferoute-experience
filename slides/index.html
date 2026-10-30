@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}[hidden]{display:none!important}</style>
+</head><body>
+<title>安心專車產品簡報</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: 16:9 網頁簡報，一次一頁、等比縮放；第 3 頁不縮放，直接嵌入可操作的互動體驗 */
+:root{--stage:#1C1E22;--bar:#2B2E35;--bus:#F5B400;--ink:#F3F1EA;--muted:#A3A6AD;--f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;--f-sign:"Barlow Condensed","Arial Narrow",sans-serif;color-scheme:dark}
+html,body{height:100%}
+body{background:var(--stage);color:var(--ink);font-family:var(--f-body);overflow:hidden}
+.deck{position:fixed;inset:0;bottom:calc(64px + env(safe-area-inset-bottom,0px))}
+.slide{position:absolute;inset:0;display:none;align-items:center;justify-content:center}
+.slide.on{display:flex}
+.frame{width:1920px;height:1080px;flex:none;transform-origin:center center;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.sl{position:relative;width:1920px;height:1080px;box-sizing:border-box;overflow:hidden}
+.sl h1,.sl h2,.sl h3,.sl p{margin:0}
+.sl img{max-width:none;display:block}
+.slide.live{flex-direction:column;align-items:stretch;justify-content:flex-start;padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px));padding-top:max(10px,env(safe-area-inset-top,0px));gap:8px}
+.livebar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:8px 14px;background:var(--bar);border-radius:12px;font-size:15px}
+.livebar b{font-size:18px}
+.lp{font-family:var(--f-sign);font-weight:700;letter-spacing:.14em;background:var(--bus);color:#2B2E35;border-radius:6px;padding:0 8px}
+.lt{color:var(--muted);font-size:14px}
+.live iframe{flex:1;width:100%;border:0;border-radius:12px;background:#EFEEE9;min-height:0}
+.ctrl{position:fixed;left:0;right:0;bottom:0;height:calc(64px + env(safe-area-inset-bottom,0px));padding:0 max(16px,env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:center;gap:14px;background:var(--stage)}
+.ctrl button{font:inherit;font-size:15px;border:1px solid #4A4E57;background:var(--bar);color:var(--ink);border-radius:999px;padding:8px 18px;cursor:pointer}
+.ctrl button:hover{border-color:var(--bus)}
+.ctrl button:focus-visible{outline:2px solid var(--bus);outline-offset:2px}
+.ctrl button[disabled]{opacity:.35;cursor:default}
+.ctrl .num{font-family:var(--f-sign);font-size:20px;font-weight:600;min-width:72px;text-align:center}
+.ctrl .fs{position:absolute;right:max(16px,env(safe-area-inset-right,0px))}
+@media (max-width:640px){.ctrl .fs{display:none}.lt{display:none}}
+</style>
+<div class="deck" id="deck">
+<div class="slide" data-n="1"><div class="frame"><section class="sl" id="cover" data-transition="fade" style="background:#2B2E35;color:#F3F1EA;font-family:'Noto Sans TC', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:32px">
+<div style="position:absolute;left:0px;top:900px;width:1920px;height:180px;background:#3A3E47"></div>
+<div style="position:absolute;left:0px;top:982px;width:1920px;height:12px;background:repeating-linear-gradient(90deg, #F5B400 0px, #F5B400 96px, rgba(245,180,0,0) 96px, rgba(245,180,0,0) 168px)"></div>
+<img src="img/sricon.png" alt="SafeRoute 標誌" style="width:132px;height:132px;object-fit:contain;border-radius:20px">
+<p style="font-family:'Barlow Condensed', Arial, sans-serif;font-size:32px;font-weight:700;letter-spacing:8px;color:#F5B400">SAFEROUTE · 1CAMPUS</p>
+<h1 style="font-family:'Noto Serif TC', Georgia, serif;font-size:120px;font-weight:700;line-height:1.1;color:#FBFAF6">安心專車</h1>
+<p style="font-size:44px;line-height:1.4;color:#D9D7CF">車走到哪一站，打開就看得到</p>
+<img src="img/cat.webp" alt="揹書包的貓" style="position:absolute;left:1100px;top:560px;width:300px;height:352px;object-fit:contain">
+<img src="img/lion.webp" alt="揮手的獅子" style="position:absolute;left:1400px;top:500px;width:360px;height:412px;object-fit:contain">
+</section>
+</div></div>
+<div class="slide" data-n="2"><div class="frame"><section class="sl" id="overview" data-transition="fade" style="background:#EFEEE9;color:#22252B;font-family:'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'Barlow Condensed', Arial, sans-serif;font-size:32px;font-weight:700;letter-spacing:6px;color:#7A5600">ONE BUS · FOUR ROLES</p>
+<h2 style="font-family:'Noto Serif TC', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">同一台車，四個身分各看各的</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:20px;background:#FBFAF6;border:1px solid #DDD9CF;border-radius:24px;padding:40px 32px">
+<img src="img/cat.webp" alt="貓" style="width:180px;height:200px;object-fit:contain">
+<h3 style="font-family:'Noto Serif TC', Georgia, serif;font-size:44px;font-weight:700">學生</h3>
+<p style="font-size:32px;line-height:1.45;color:#4A4E57;text-align:center">看車到哪<br>上車掃碼打卡</p>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:20px;background:#FBFAF6;border:1px solid #DDD9CF;border-radius:24px;padding:40px 32px">
+<img src="img/elephant.webp" alt="大象" style="width:180px;height:200px;object-fit:contain">
+<h3 style="font-family:'Noto Serif TC', Georgia, serif;font-size:44px;font-weight:700">家長</h3>
+<p style="font-size:32px;line-height:1.45;color:#4A4E57;text-align:center">收到上車通知<br>看到孩子到校</p>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:20px;background:#FBFAF6;border:1px solid #DDD9CF;border-radius:24px;padding:40px 32px">
+<img src="img/koala.webp" alt="無尾熊" style="width:180px;height:200px;object-fit:contain">
+<h3 style="font-family:'Noto Serif TC', Georgia, serif;font-size:44px;font-weight:700">老師</h3>
+<p style="font-size:32px;line-height:1.45;color:#4A4E57;text-align:center">全校車況<br>一頁看完</p>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:20px;background:#FBFAF6;border:1px solid #DDD9CF;border-radius:24px;padding:40px 32px">
+<img src="img/pig.webp" alt="小豬" style="width:180px;height:200px;object-fit:contain">
+<h3 style="font-family:'Noto Serif TC', Georgia, serif;font-size:44px;font-weight:700">學校</h3>
+<p style="font-size:32px;line-height:1.45;color:#4A4E57;text-align:center">發即時訊息<br>管打卡與路線</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#7A7D84">安心專車 SafeRoute · 1Campus</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-family:'Barlow Condensed', Arial, sans-serif;font-size:24px;text-align:right;color:#7A7D84">02</p>
+</section>
+</div></div>
+<div class="slide live" data-n="3" aria-label="第 3 頁：現場試試看"><div class="livebar"><span class="lp">LIVE</span><b>現場試試看</b><span class="lt">選一個身分，直接在這裡操作。操作時方向鍵不會翻頁，按下方按鈕翻頁。</span></div><iframe src="../" title="安心專車互動體驗" loading="lazy"></iframe></div>
+<div class="slide" data-n="4"><div class="frame"><section class="sl" id="login" data-transition="fade" style="background:#EFEEE9;color:#22252B;font-family:'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:row;align-items:center;gap:112px">
+<img src="img/s2_campus.webp" alt="1Campus App 校園頁，第一個圖示是安心專車" style="width:454px;height:824px;object-fit:contain;border-radius:48px;box-shadow:0px 24px 60px rgba(34,37,43,0.18)">
+<div style="flex:1;display:flex;flex-direction:column;gap:36px">
+<p style="align-self:start;background:#2B2E35;color:#F5B400;font-size:28px;font-weight:700;padding:6px 20px;border-radius:10px">開始使用</p>
+<h2 style="font-family:'Noto Serif TC', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">就在 1Campus App 裡</h2>
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px"><p style="width:72px;font-family:'Barlow Condensed', Arial, sans-serif;font-size:44px;font-weight:700;text-align:center;background:#F5B400;color:#2B2E35;border-radius:12px">1</p><p style="font-size:32px">打開 1Campus App</p></div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px"><p style="width:72px;font-family:'Barlow Condensed', Arial, sans-serif;font-size:44px;font-weight:700;text-align:center;background:#F5B400;color:#2B2E35;border-radius:12px">2</p><p style="font-size:32px">點下方「校園」</p></div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px"><p style="width:72px;font-family:'Barlow Condensed', Arial, sans-serif;font-size:44px;font-weight:700;text-align:center;background:#F5B400;color:#2B2E35;border-radius:12px">3</p><p style="font-size:32px">點「安心專車」</p></div>
+</div>
+<p style="font-size:32px;line-height:1.5;color:#4A4E57">不用另外下載 App，也不用每次登入。<br>家長有兩個孩子搭車，點「換子女」切換。</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#7A7D84">安心專車 SafeRoute · 1Campus</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-family:'Barlow Condensed', Arial, sans-serif;font-size:24px;text-align:right;color:#7A7D84">04</p>
+</section>
+</div></div>
+<div class="slide" data-n="5"><div class="frame"><section class="sl" id="s-route" data-transition="fade" style="background:#EFEEE9;color:#22252B;font-family:'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:row;align-items:center;gap:112px">
+<div style="flex:1;display:flex;flex-direction:column;gap:36px">
+<p style="align-self:start;background:#2B2E35;color:#F5B400;font-size:28px;font-weight:700;padding:6px 20px;border-radius:10px">學生</p>
+<h2 style="font-family:'Noto Serif TC', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">車到哪了，打開就知道</h2>
+<p style="font-size:32px;line-height:1.5;color:#4A4E57">畫面寫著下一站和表定時間，<br>地圖上看得到車的位置。</p>
+<div style="display:flex;flex-direction:row;flex-wrap:wrap;gap:20px">
+<p style="font-size:32px;font-weight:700;background:#DCF1EC;color:#17705F;padding:8px 24px;border-radius:999px">準點</p>
+<p style="font-size:32px;font-weight:700;background:#FBE5DD;color:#B23F23;padding:8px 24px;border-radius:999px">晚到 12 分</p>
+<p style="font-size:32px;font-weight:700;background:#F7E3ED;color:#A33F6E;padding:8px 24px;border-radius:999px">提早 1 分</p>
+</div>
+<p style="font-size:24px;color:#7A7D84">準不準時，直接寫出幾分鐘。</p>
+</div>
+<img src="img/s1_detail.webp" alt="學生手機：3號海線行駛中、準點，下一站長春市場 06:50，附路線地圖" style="width:454px;height:824px;object-fit:contain;border-radius:48px;box-shadow:0px 24px 60px rgba(34,37,43,0.18)">
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#7A7D84">安心專車 SafeRoute · 1Campus</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-family:'Barlow Condensed', Arial, sans-serif;font-size:24px;text-align:right;color:#7A7D84">05</p>
+</section>
+</div></div>
+<div class="slide" data-n="6"><div class="frame"><section class="sl" id="s-stops" data-transition="fade" style="background:#EFEEE9;color:#22252B;font-family:'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:row;align-items:center;gap:112px">
+<div style="flex:1;display:flex;flex-direction:column;gap:40px">
+<p style="align-self:start;background:#2B2E35;color:#F5B400;font-size:28px;font-weight:700;padding:6px 20px;border-radius:10px">學生</p>
+<h2 style="font-family:'Noto Serif TC', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">每一站的時間，一行看完</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;background:#FBFAF6;border:1px solid #DDD9CF;border-radius:24px;padding:40px">
+<div style="display:flex;flex-direction:column;gap:8px"><p style="font-size:28px;color:#4A4E57">表定</p><p style="font-family:'Barlow Condensed', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">06:50</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><p style="font-size:28px;color:#4A4E57">進站</p><p style="font-family:'Barlow Condensed', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#17705F">06:49</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><p style="font-size:28px;color:#4A4E57">出站</p><p style="font-family:'Barlow Condensed', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">06:51</p></div>
+</div>
+<p style="font-size:32px;line-height:1.5;color:#4A4E57">車到了會補上實際時間，<br>經過的站也能點開來看。</p>
+</div>
+<img src="img/s1_arrived.webp" alt="學生手機：車到長春市場，進站 06:49，提早 1 分" style="width:454px;height:824px;object-fit:contain;border-radius:48px;box-shadow:0px 24px 60px rgba(34,37,43,0.18)">
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#7A7D84">安心專車 SafeRoute · 1Campus</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-family:'Barlow Condensed', Arial, sans-serif;font-size:24px;text-align:right;color:#7A7D84">06</p>
+</section>
+</div></div>
+<div class="slide" data-n="7"><div class="frame"><section class="sl" id="checkin" data-transition="fade" style="background:#2B2E35;color:#F3F1EA;font-family:'Noto Sans TC', Arial, sans-serif;padding:96px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'Barlow Condensed', Arial, sans-serif;font-size:32px;font-weight:700;letter-spacing:6px;color:#F5B400">HIGHLIGHT · 掃碼打卡</p>
+<h2 style="font-family:'Noto Serif TC', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15;color:#FBFAF6">掃一下，三個人都知道</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:20px">
+<img src="img/s1_scan.webp" alt="學生手機相機對準車上的乘車碼" style="width:290px;height:526px;object-fit:contain;border-radius:32px">
+<p style="font-size:32px;line-height:1.4;text-align:center"><span style="color:#F5B400">學生</span>　上車掃車上的乘車碼</p>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:20px">
+<img src="img/s1_ok.webp" alt="完成打卡：3號海線長春市場 06:50:12" style="width:290px;height:526px;object-fit:contain;border-radius:32px">
+<p style="font-size:32px;line-height:1.4;text-align:center"><span style="color:#F5B400">學生</span>　留下上車時間和地點</p>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:20px">
+<img src="img/s2_notif.webp" alt="家長手機跳出上車通知" style="width:290px;height:526px;object-fit:contain;border-radius:32px">
+<p style="font-size:32px;line-height:1.4;text-align:center"><span style="color:#F5B400">家長</span>　同一刻收到通知</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#9A9DA4">學校的打卡紀錄也同時多一筆</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-family:'Barlow Condensed', Arial, sans-serif;font-size:24px;text-align:right;color:#9A9DA4">07</p>
+</section>
+</div></div>
+<div class="slide" data-n="8"><div class="frame"><section class="sl" id="p-notify" data-transition="fade" style="background:#E6E3DA;color:#22252B;font-family:'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:row;align-items:center;gap:112px">
+<div style="flex:1;display:flex;flex-direction:column;gap:36px">
+<p style="align-self:start;background:#2B2E35;color:#F5B400;font-size:28px;font-weight:700;padding:6px 20px;border-radius:10px">家長</p>
+<h2 style="font-family:'Noto Serif TC', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">孩子一上車，通知就到</h2>
+<div style="display:flex;flex-direction:column;gap:16px;background:#FBFAF6;border-left:8px solid #F5B400;border-radius:16px;padding:36px 40px">
+<p style="font-size:28px;font-weight:700">子弟搭乘校車訊息通知</p>
+<p style="font-size:32px;line-height:1.6;color:#4A4E57">您的孩子 <b>林品妤</b> 已於 <b>06:50:12</b> 在 <b>長春市場</b> 搭上了 <b>3號 海線</b> 的校車。</p>
+</div>
+<p style="font-size:32px;line-height:1.5;color:#4A4E57">幾點、哪一站、哪條線，一看就知道。</p>
+</div>
+<img src="img/s2_msg.webp" alt="家長手機：子弟搭乘校車訊息通知全文" style="width:454px;height:824px;object-fit:contain;border-radius:48px;box-shadow:0px 24px 60px rgba(34,37,43,0.18)">
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#6E7178">安心專車 SafeRoute · 1Campus　｜　示範資料皆為虛構</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-family:'Barlow Condensed', Arial, sans-serif;font-size:24px;text-align:right;color:#6E7178">08</p>
+</section>
+</div></div>
+<div class="slide" data-n="9"><div class="frame"><section class="sl" id="p-arrive" data-transition="fade" style="background:#E6E3DA;color:#22252B;font-family:'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:row;align-items:center;gap:112px">
+<div style="flex:1;display:flex;flex-direction:column;gap:36px">
+<p style="align-self:start;background:#2B2E35;color:#F5B400;font-size:28px;font-weight:700;padding:6px 20px;border-radius:10px">家長</p>
+<h2 style="font-family:'Noto Serif TC', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">到學校了，也看得到</h2>
+<div style="display:flex;flex-direction:column;gap:8px;background:#DCF1EC;border-radius:24px;padding:36px 40px">
+<p style="font-size:44px;font-weight:900;color:#17705F">已到終點</p>
+<p style="font-size:32px;color:#22252B">最後一站 青嵐中學 · 進站 <span style="color:#17705F">07:19</span></p>
+</div>
+<p style="font-size:32px;line-height:1.5;color:#4A4E57">從上車到到校，家長都看在眼裡，<br>可以放心出門上班。</p>
+</div>
+<img src="img/s2_arrived.webp" alt="家長手機：3號海線已到終點，進站 07:19" style="width:454px;height:824px;object-fit:contain;border-radius:48px;box-shadow:0px 24px 60px rgba(34,37,43,0.18)">
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#6E7178">安心專車 SafeRoute · 1Campus</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-family:'Barlow Condensed', Arial, sans-serif;font-size:24px;text-align:right;color:#6E7178">09</p>
+</section>
+</div></div>
+<div class="slide" data-n="10"><div class="frame"><section class="sl" id="t-live" data-transition="fade" style="background:#EFEEE9;color:#22252B;font-family:'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:row;align-items:center;gap:112px">
+<div style="flex:1;display:flex;flex-direction:column;gap:36px">
+<p style="align-self:start;background:#2B2E35;color:#F5B400;font-size:28px;font-weight:700;padding:6px 20px;border-radius:10px">老師</p>
+<h2 style="font-family:'Noto Serif TC', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">全校車況，一頁看完</h2>
+<p style="font-size:32px;line-height:1.5;color:#4A4E57">晚到的路線自動排在最上面，<br>不用一條一條點。</p>
+<div style="display:flex;flex-direction:column;background:#FBFAF6;border:1px solid #DDD9CF;border-radius:24px;padding:12px 36px">
+<div style="display:flex;flex-direction:row;align-items:center;gap:20px;padding:16px 0px;border-bottom:1px solid #DDD9CF"><p style="flex:1;font-size:32px;font-weight:700">5號 溪洲線</p><p style="font-size:28px;font-weight:700;background:#FBE5DD;color:#B23F23;padding:4px 18px;border-radius:999px">晚到 12 分</p></div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:20px;padding:16px 0px;border-bottom:1px solid #DDD9CF"><p style="flex:1;font-size:32px;font-weight:700">2號 市區線</p><p style="font-size:28px;font-weight:700;background:#DCF1EC;color:#17705F;padding:4px 18px;border-radius:999px">準點</p></div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:20px;padding:16px 0px"><p style="flex:1;font-size:32px;font-weight:700">6號 丘陵線</p><p style="font-size:28px;font-weight:700;background:#F7E3ED;color:#A33F6E;padding:4px 18px;border-radius:999px">提早 2 分</p></div>
+</div>
+</div>
+<img src="img/s3_live.webp" alt="老師手機：即時車況，1 條路線晚到，晚到的排在最上面" style="width:454px;height:824px;object-fit:contain;border-radius:48px;box-shadow:0px 24px 60px rgba(34,37,43,0.18)">
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#7A7D84">安心專車 SafeRoute · 1Campus</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-family:'Barlow Condensed', Arial, sans-serif;font-size:24px;text-align:right;color:#7A7D84">10</p>
+</section>
+</div></div>
+<div class="slide" data-n="11"><div class="frame"><section class="sl" id="t-delay" data-transition="fade" style="background:#EFEEE9;color:#22252B;font-family:'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:row;align-items:center;gap:112px">
+<div style="flex:1;display:flex;flex-direction:column;gap:36px">
+<p style="align-self:start;background:#2B2E35;color:#F5B400;font-size:28px;font-weight:700;padding:6px 20px;border-radius:10px">老師</p>
+<h2 style="font-family:'Noto Serif TC', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">在哪一站耽擱，看得出來</h2>
+<div style="display:flex;flex-direction:column;gap:16px;background:#FBE5DD;border-radius:24px;padding:36px 40px">
+<p style="font-size:32px;font-weight:700">溪洲大橋頭</p>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-size:28px;color:#4A4E57">表定</p><p style="font-family:'Barlow Condensed', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">06:58</p></div>
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-size:28px;color:#4A4E57">進站</p><p style="font-family:'Barlow Condensed', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;color:#B23F23">07:09</p></div>
+</div>
+</div>
+<p style="font-size:32px;line-height:1.5;color:#4A4E57">每站都有時間紀錄，<br>跟家長說明時有根據。</p>
+</div>
+<img src="img/s3_past.webp" alt="老師手機：5號溪洲線已過站點，溪洲大橋頭比表定晚 11 分" style="width:454px;height:824px;object-fit:contain;border-radius:48px;box-shadow:0px 24px 60px rgba(34,37,43,0.18)">
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#7A7D84">安心專車 SafeRoute · 1Campus</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-family:'Barlow Condensed', Arial, sans-serif;font-size:24px;text-align:right;color:#7A7D84">11</p>
+</section>
+</div></div>
+<div class="slide" data-n="12"><div class="frame"><section class="sl" id="a-message" data-transition="fade" style="background:#EFEEE9;color:#22252B;font-family:'Noto Sans TC', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:row;align-items:center;gap:96px">
+<div style="flex:1;display:flex;flex-direction:column;gap:32px">
+<p style="align-self:start;background:#2B2E35;color:#F5B400;font-size:28px;font-weight:700;padding:6px 20px;border-radius:10px">學校</p>
+<h2 style="font-family:'Noto Serif TC', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">塞車了，<br>一次通知所有人</h2>
+<p style="font-size:32px;line-height:1.5;color:#4A4E57">常用的話已經寫好，選一句就能送。<br>家長和相關老師同時收到。</p>
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="align-self:start;font-size:28px;background:#FBFAF6;border:1px solid #DDD9CF;padding:8px 20px;border-radius:12px">塞車晚到 10 分。</p>
+<p style="align-self:start;font-size:28px;background:#FBFAF6;border:1px solid #DDD9CF;padding:8px 20px;border-radius:12px">車輛調整換車請稍候，約晚到 10 分。</p>
+<p style="align-self:start;font-size:28px;background:#FBFAF6;border:1px solid #DDD9CF;padding:8px 20px;border-radius:12px">嚴重交通問題，隨時更新動態狀況。</p>
+</div>
+</div>
+<img src="img/s4_sent.webp" alt="學校後台送出即時訊息，下方是家長與老師手機收到的通知" style="width:662px;height:824px;object-fit:contain;border-radius:24px;box-shadow:0px 24px 60px rgba(34,37,43,0.16)">
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#7A7D84">安心專車 SafeRoute · 1Campus</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-family:'Barlow Condensed', Arial, sans-serif;font-size:24px;text-align:right;color:#7A7D84">12</p>
+</section>
+</div></div>
+<div class="slide" data-n="13"><div class="frame"><section class="sl" id="a-records" data-transition="fade" style="background:#EFEEE9;color:#22252B;font-family:'Noto Sans TC', Arial, sans-serif;padding:96px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="background:#2B2E35;color:#F5B400;font-size:28px;font-weight:700;padding:6px 20px;border-radius:10px">學校</p>
+<h2 style="font-family:'Noto Serif TC', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15">紀錄和路線，學校自己管</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:64px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<img src="img/s4_report.webp" alt="打卡紀錄報表，列出路線、站點、學號、姓名、打卡時間、座標" style="width:800px;height:560px;object-fit:contain;background:#FBFAF6;border-radius:20px">
+<h3 style="font-family:'Noto Serif TC', Georgia, serif;font-size:44px;font-weight:700">打卡紀錄，一表看完</h3>
+<p style="font-size:32px;color:#4A4E57">誰、幾點、在哪一站上車，可下載報表。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<img src="img/s4_paste.webp" alt="新增路線，從 Excel 貼上站點與乘客，系統比對名冊" style="width:800px;height:560px;object-fit:contain;background:#FBFAF6;border-radius:20px">
+<h3 style="font-family:'Noto Serif TC', Georgia, serif;font-size:44px;font-weight:700">新路線，從 Excel 貼上</h3>
+<p style="font-size:32px;color:#4A4E57">站名、時間、乘客一次貼，自動比對名冊。</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#7A7D84">安心專車 SafeRoute · 1Campus</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-family:'Barlow Condensed', Arial, sans-serif;font-size:24px;text-align:right;color:#7A7D84">13</p>
+</section>
+</div></div>
+<div class="slide" data-n="14"><div class="frame"><section class="sl" id="end" data-transition="fade" style="background:#2B2E35;color:#F3F1EA;font-family:'Noto Sans TC', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:36px">
+<div style="position:absolute;left:0px;top:900px;width:1920px;height:180px;background:#3A3E47"></div>
+<div style="position:absolute;left:0px;top:982px;width:1920px;height:12px;background:repeating-linear-gradient(90deg, #F5B400 0px, #F5B400 96px, rgba(245,180,0,0) 96px, rgba(245,180,0,0) 168px)"></div>
+<p style="font-family:'Barlow Condensed', Arial, sans-serif;font-size:32px;font-weight:700;letter-spacing:8px;color:#F5B400">THANK YOU</p>
+<h2 style="font-family:'Noto Serif TC', Georgia, serif;font-size:120px;font-weight:700;line-height:1.1;color:#FBFAF6">會後也能再試一次</h2>
+<p style="font-size:44px;line-height:1.4;color:#D9D7CF">學生、家長、老師、學校，四個身分都能操作</p>
+<p style="align-self:start;font-family:'Barlow Condensed', Arial, sans-serif;font-size:44px;font-weight:600;background:#F5B400;color:#2B2E35;padding:10px 28px;border-radius:14px">tinachou-hash.github.io/saferoute-experience</p>
+<img src="img/koala.webp" alt="無尾熊" style="position:absolute;left:1180px;top:600px;width:240px;height:300px;object-fit:contain">
+<img src="img/tiger.webp" alt="老虎" style="position:absolute;left:1440px;top:560px;width:300px;height:340px;object-fit:contain">
+</section>
+</div></div>
+</div>
+<nav class="ctrl" aria-label="翻頁"><button id="prev" aria-label="上一頁">← 上一頁</button><span class="num" id="num">1 / 14</span><button id="next" aria-label="下一頁">下一頁 →</button><button class="fs" id="fs">全螢幕</button></nav>
+<script>
+const slides=[...document.querySelectorAll('.slide')]; let cur=0;
+function fit(){ const d=document.getElementById('deck').getBoundingClientRect(); const s=Math.min((d.width-24)/1920,(d.height-24)/1080);
+  document.querySelectorAll('.frame').forEach(f=>{f.style.transform='scale('+s+')'; f.parentElement.style.setProperty('--s',s);}); 
+  document.querySelectorAll('.slide:not(.live)').forEach(sl=>{ const f=sl.querySelector('.frame'); f.style.margin=((1080*s-1080)/2)+'px '+((1920*s-1920)/2)+'px'; }); }
+function show(i){ cur=Math.max(0,Math.min(slides.length-1,i)); slides.forEach((s,k)=>s.classList.toggle('on',k===cur));
+  document.getElementById('num').textContent=(cur+1)+' / '+slides.length; document.getElementById('prev').disabled=cur===0; document.getElementById('next').disabled=cur===slides.length-1;
+  try{ history.replaceState(null,'','#p'+(cur+1)); }catch(e){} }
+document.getElementById('prev').onclick=()=>show(cur-1); document.getElementById('next').onclick=()=>show(cur+1);
+addEventListener('keydown',e=>{ if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();show(cur+1);} if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(cur-1);} });
+let tx=null; addEventListener('touchstart',e=>{ if(e.target.closest('.live'))return; tx=e.touches[0].clientX; },{passive:true});
+addEventListener('touchend',e=>{ if(tx==null)return; const dx=e.changedTouches[0].clientX-tx; tx=null; if(Math.abs(dx)>50)show(cur+(dx<0?1:-1)); });
+document.getElementById('fs').onclick=()=>{ try{ if(document.fullscreenElement)document.exitFullscreen(); else document.documentElement.requestFullscreen().catch(()=>{}); }catch(e){} };
+addEventListener('resize',fit); const m=/^#p(\d+)$/.exec(location.hash); fit(); show(m?(+m[1]-1):0);
+</script>
+
+</body></html>
